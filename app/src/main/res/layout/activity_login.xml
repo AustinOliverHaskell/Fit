@@ -8,7 +8,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="hackuc2018.fit.LoginActivity">
+    tools:context="hackuc2018.fit.LoginActivity"
+    android:background="@color/colorPrimary"
+    >
 
     <!-- Login progress -->
     <ProgressBar
@@ -19,10 +21,10 @@
         android:layout_marginBottom="8dp"
         android:visibility="gone" />
 
-    <ScrollView
+    <LinearLayout
         android:id="@+id/login_form"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:id="@+id/email_login_form"
@@ -41,7 +43,8 @@
                     android:hint="@string/prompt_email"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:textColor="@color/basicWhite"/>
 
             </android.support.design.widget.TextInputLayout>
 
@@ -59,6 +62,7 @@
                     android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"
                     android:maxLines="1"
+                    android:textColor="@color/basicWhite"
                     android:singleLine="true" />
 
             </android.support.design.widget.TextInputLayout>
@@ -70,8 +74,23 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/action_sign_in"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/basicWhite"
+                android:background="@color/colorPrimary"/>
 
         </LinearLayout>
-    </ScrollView>
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/signUp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no_account"
+                android:textColor="@color/basicWhite"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
 </LinearLayout>
