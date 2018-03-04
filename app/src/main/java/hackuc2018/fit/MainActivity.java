@@ -27,6 +27,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -84,7 +85,19 @@ public class MainActivity extends AppCompatActivity {
             TextView nameLabel = (TextView) findViewById(R.id.Score);
             nameLabel.setText((name));
 
+            Button loginButton = (Button) findViewById(R.id.signOut);
+            loginButton.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View view)
+                {
+                    auth.signOut();
+                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                    auth.removeAuthStateListener(authStateListener);
+                    startActivity(intent);
 
+                }
+            });
 
             /*ImageView profileimage = findViewById(R.id.profile_image);
             profileimage.setOnClickListener(new View.OnClickListener() {
