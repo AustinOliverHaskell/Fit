@@ -65,6 +65,13 @@ public class DBManager
         return userData.getScore();
     }
 
+    public void setValue(String path, Object value)
+    {
+        DatabaseReference r = db.getReference().child(path);
+        r.setValue(value);
+    }
+
+
     public void push(String location)
     {
         // Update Changes
