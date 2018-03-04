@@ -32,6 +32,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.github.pavlospt.CircleView;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 
@@ -74,7 +75,18 @@ public class MainActivity extends AppCompatActivity {
         }
         else
         {
-            ImageView profileimage = findViewById(R.id.profile_image);
+            FirebaseUser user = auth.getCurrentUser();
+            String name = user.getEmail();
+
+            CircleView circle = (CircleView) findViewById(R.id.CircleView);
+            circle.setTitleText("500");
+
+            TextView nameLabel = (TextView) findViewById(R.id.Score);
+            nameLabel.setText((name));
+
+
+
+            /*ImageView profileimage = findViewById(R.id.profile_image);
             profileimage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -83,7 +95,9 @@ public class MainActivity extends AppCompatActivity {
                     auth.removeAuthStateListener(authStateListener);
                     startActivity(intent);
                 }
-            });
+            });*/
+
+
         }
     }
 
