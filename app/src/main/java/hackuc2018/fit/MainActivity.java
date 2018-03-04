@@ -55,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
     private String username = "";
     private FirebaseAuth.AuthStateListener authStateListener;
 
+    DBManager db = new DBManager("test");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
