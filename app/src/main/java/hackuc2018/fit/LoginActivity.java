@@ -28,6 +28,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.support.annotation.NonNull;
@@ -51,7 +52,7 @@ import static android.Manifest.permission.READ_CONTACTS;
 /**
  * A login screen that offers login via email/password.
  */
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener
+public class LoginActivity extends AppCompatActivity
 {
     private FirebaseAuth auth;
     private static final String TAG = "EmailPassword";
@@ -67,6 +68,28 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         //Initializes Firebase objects
         auth = FirebaseAuth.getInstance();
 
+        LinearLayout signuptext = (LinearLayout) findViewById(R.id.signUp);
+        signuptext.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(LoginActivity.this, CreateAccountActivity.class);
+                startActivity(intent);
+            }
+
+        });
+
+        Button loginButton = (Button) findViewById(R.id.email_sign_in_button);
+        loginButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                signIn((findViewById(R.id.email)).toString(), (findViewById(R.id.password)).toString());
+            }
+        });
+
     }
 
     @Override
@@ -75,36 +98,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = auth.getCurrentUser();
         //updateUI(currentUser);
-    }
-
-
-    private void createAccount(String email, String password)
-    {
-        Log.d(TAG, "createAccount:" + email);
-
-        if (!validateForm()) {
-            return;
-        }
-
-        auth.createUserWithEmailAndPassword(email,password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful())
-                        {
-                            Log.d(TAG, "createUserWithEmail: success");
-                            FirebaseUser user = auth.getCurrentUser();
-                            //updateUI(user);
-                        }
-                        else
-                        {
-                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(LoginActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                            //updateUI(null);
-                        }
-                    }
-                });
     }
 
     private void signIn(String email, String password)
@@ -123,8 +116,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         {
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = auth.getCurrentUser();
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(intent);
                             //updateUI(user);
                         }
+                        else Toast.makeText(LoginActivity.this,
+                                task.getException().toString(),
+                                Toast.LENGTH_SHORT).show();
                     }
                 });
     }
@@ -133,14 +131,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     {
         boolean valid = true;
 
-        String email = ((TextView) findViewById(R.id.email)).toString();
         if (!fieldsFilled())
-        {
-            valid = false;
-        }
-
-        String password = ((TextView) findViewById(R.id.password)).toString();
-        if(!fieldsFilled())
         {
             valid = false;
         }
@@ -152,24 +143,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     //Makes sure that the fields are filled
     private boolean fieldsFilled()
     {
-        String username = ((TextView) findViewById(R.id.email)).toString();
-        String password = ((TextView) findViewById(R.id.password)).toString();
+        final EditText username = (EditText)findViewById(R.id.Username);
+        final EditText password = (EditText) findViewById(R.id.Password);
 
-        return (!username.equals("") && !password.equals(("")));
-    }
-
-    @Override
-    public void onClick(View v)
-    {
-        int i = v.getId();
-        if(i == R.id.email_sign_in_button)
-        {
-            signIn((findViewById(R.id.email)).toString(), (findViewById(R.id.password)).toString());
-        }
-        else if (i == R.id.signUp)
-        {
-            createAccount((findViewById(R.id.email)).toString(), (findViewById(R.id.password)).toString());
-        }
+        return (!username.getText().toString().equals("") && !password.getText().toString().equals(""));
     }
 }
 
