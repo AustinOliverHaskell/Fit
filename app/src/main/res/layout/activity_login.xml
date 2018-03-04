@@ -85,7 +85,6 @@
             android:layout_width="match_parent"
             android:id="@+id/signUp"
             android:orientation="vertical"
-            android:clickable="true"
             >
             <TextView
                 android:layout_width="match_parent"
