@@ -24,7 +24,8 @@
     <LinearLayout
         android:id="@+id/login_form"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/email_login_form"
@@ -83,12 +84,23 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:id="@+id/signUp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/no_account"
-                android:textColor="@color/basicWhite"
+                android:textAlignment="center"
+                android:textSize="10dp"
+                android:textColor="@color/lightGray"
+                />
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="@string/sign_up"
+                android:textSize="10dp"
+                android:textAlignment="center"
+                android:textColor="@color/lightGray"
                 />
         </LinearLayout>
     </LinearLayout>
