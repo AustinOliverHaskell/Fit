@@ -91,17 +91,27 @@
                 android:layout_height="wrap_content"
                 android:text="@string/no_account"
                 android:textAlignment="center"
-                android:textSize="10dp"
+                android:textSize="12sp"
                 android:textColor="@color/lightGray"
                 />
             <TextView
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:text="@string/sign_up"
-                android:textSize="10dp"
+                android:textSize="12sp"
                 android:textAlignment="center"
                 android:textColor="@color/lightGray"
                 />
+
+            <EditText
+                android:id="@+id/Error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textCapCharacters|textPersonName"
+                android:visibility="invisible"
+                android:textColor="@color/lightGray"
+                android:text="Please check Username and Password" />
         </LinearLayout>
     </LinearLayout>
 

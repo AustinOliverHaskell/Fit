@@ -21,27 +21,327 @@
                 android:gravity="center"
                 >
 
-            <ImageView
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/profile_image"
-                android:layout_width="96dp"
-                android:layout_height="96dp"
-                android:src="@drawable/profile_austin"
-                />
-
+                <com.github.pavlospt.CircleView
+                    android:id="@+id/CircleView"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    app:cv_titleText=""
+                    app:cv_subtitleText="subtitle"
+                    app:cv_titleSize="20dp"
+                    app:cv_subtitleSize="9dp"
+                    app:cv_titleColor="@color/purple"
+                    app:cv_subtitleColor="@color/colorPrimary"
+                    app:cv_strokeColorValue="@color/purple"
+                    app:cv_backgroundColorValue="@color/basicWhite"
+                    app:cv_fillColor="@color/colorPrimary"
+                    app:cv_fillRadius="0.9"
+                    app:cv_strokeWidthSize="5"/>
             </LinearLayout>
 
             <TextView
-                android:layout_height="wrap_content"
+                android:id="@+id/Score"
                 android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Score"
                 android:textAlignment="center"
                 android:textColor="@color/purple"
-                android:id="@+id/score"
-                android:text="Score"
-                android:textSize="24dp"
-                android:clickable="true"
-                />
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="fill_horizontal"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="210dp"
+                    android:layout_height="100dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <com.github.pavlospt.CircleView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/CircleView2"
+                        android:layout_width="125dp"
+                        android:layout_height="75dp"
+                        app:cv_backgroundColorValue="@color/basicWhite"
+                        app:cv_fillColor="@color/colorPrimary"
+                        app:cv_fillRadius="0.9"
+                        app:cv_strokeColorValue="@color/purple"
+                        app:cv_strokeWidthSize="5"
+                        app:cv_subtitleColor="@color/colorPrimary"
+                        app:cv_subtitleSize="9dp"
+                        app:cv_subtitleText="subtitle"
+                        app:cv_titleColor="@color/purple"
+                        app:cv_titleSize="15dp"
+                        app:cv_titleText="" />
+
+                    <TextView
+                        android:id="@+id/absTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Abs"
+                        android:textAlignment="center"
+                        android:textColor="@color/purple" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="190dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <com.github.pavlospt.CircleView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/CircleView3"
+                        android:layout_width="125dp"
+                        android:layout_height="75dp"
+                        app:cv_backgroundColorValue="@color/basicWhite"
+                        app:cv_fillColor="@color/colorPrimary"
+                        app:cv_fillRadius="0.9"
+                        app:cv_strokeColorValue="@color/purple"
+                        app:cv_strokeWidthSize="5"
+                        app:cv_subtitleColor="@color/colorPrimary"
+                        app:cv_subtitleSize="9dp"
+                        app:cv_subtitleText="subtitle"
+                        app:cv_titleColor="@color/purple"
+                        app:cv_titleSize="15dp"
+                        app:cv_titleText="" />
+
+                    <TextView
+                        android:id="@+id/bicepsTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Biceps"
+                        android:textAlignment="center"
+                        android:textColor="@color/purple" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="210dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.github.pavlospt.CircleView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/CircleView4"
+                        android:layout_width="100dp"
+                        android:layout_height="75dp"
+                        app:cv_backgroundColorValue="@color/basicWhite"
+                        app:cv_fillColor="@color/colorPrimary"
+                        app:cv_fillRadius="0.9"
+                        app:cv_strokeColorValue="@color/purple"
+                        app:cv_strokeWidthSize="5"
+                        app:cv_subtitleColor="@color/colorPrimary"
+                        app:cv_subtitleSize="9dp"
+                        app:cv_subtitleText="subtitle"
+                        app:cv_titleColor="@color/purple"
+                        app:cv_titleSize="15dp"
+                        app:cv_titleText="" />
+
+                    <TextView
+                        android:id="@+id/backLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Back"
+                        android:textAlignment="center"
+                        android:textColor="@color/purple" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="190dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.github.pavlospt.CircleView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/CircleView5"
+                        android:layout_width="100dp"
+                        android:layout_height="75dp"
+                        app:cv_backgroundColorValue="@color/basicWhite"
+                        app:cv_fillColor="@color/colorPrimary"
+                        app:cv_fillRadius="0.9"
+                        app:cv_strokeColorValue="@color/purple"
+                        app:cv_strokeWidthSize="5"
+                        app:cv_subtitleColor="@color/colorPrimary"
+                        app:cv_subtitleSize="9dp"
+                        app:cv_subtitleText="subtitle"
+                        app:cv_titleColor="@color/purple"
+                        app:cv_titleSize="15dp"
+                        app:cv_titleText="" />
+
+                    <TextView
+                        android:id="@+id/cardioLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Cardio"
+                        android:textAlignment="center"
+                        android:textColor="@color/purple" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="fill_horizontal"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="210dp"
+                    android:layout_height="100dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <com.github.pavlospt.CircleView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/CircleView6"
+                        android:layout_width="100dp"
+                        android:layout_height="75dp"
+                        app:cv_backgroundColorValue="@color/basicWhite"
+                        app:cv_fillColor="@color/colorPrimary"
+                        app:cv_fillRadius="0.9"
+                        app:cv_strokeColorValue="@color/purple"
+                        app:cv_strokeWidthSize="5"
+                        app:cv_subtitleColor="@color/colorPrimary"
+                        app:cv_subtitleSize="9dp"
+                        app:cv_subtitleText="subtitle"
+                        app:cv_titleColor="@color/purple"
+                        app:cv_titleSize="15dp"
+                        app:cv_titleText="" />
+
+                    <TextView
+                        android:id="@+id/chestLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Chest"
+                        android:textAlignment="center"
+                        android:textColor="@color/purple" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="190dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <com.github.pavlospt.CircleView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/CircleView7"
+                        android:layout_width="100dp"
+                        android:layout_height="75dp"
+                        app:cv_backgroundColorValue="@color/basicWhite"
+                        app:cv_fillColor="@color/colorPrimary"
+                        app:cv_fillRadius="0.9"
+                        app:cv_strokeColorValue="@color/purple"
+                        app:cv_strokeWidthSize="5"
+                        app:cv_subtitleColor="@color/colorPrimary"
+                        app:cv_subtitleSize="9dp"
+                        app:cv_subtitleText="subtitle"
+                        app:cv_titleColor="@color/purple"
+                        app:cv_titleSize="15dp"
+                        app:cv_titleText="" />
+
+                    <TextView
+                        android:id="@+id/shoulderLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Shoulder"
+                        android:textAlignment="center"
+                        android:textColor="@color/purple" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="fill_horizontal"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="210dp"
+                    android:layout_height="100dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <com.github.pavlospt.CircleView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/CircleView8"
+                        android:layout_width="100dp"
+                        android:layout_height="75dp"
+                        app:cv_backgroundColorValue="@color/basicWhite"
+                        app:cv_fillColor="@color/colorPrimary"
+                        app:cv_fillRadius="0.9"
+                        app:cv_strokeColorValue="@color/purple"
+                        app:cv_strokeWidthSize="5"
+                        app:cv_subtitleColor="@color/colorPrimary"
+                        app:cv_subtitleSize="9dp"
+                        app:cv_subtitleText="subtitle"
+                        app:cv_titleColor="@color/purple"
+                        app:cv_titleSize="15dp"
+                        app:cv_titleText="" />
+
+                    <TextView
+                        android:id="@+id/ThighLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Thigh"
+                        android:textAlignment="center"
+                        android:textColor="@color/purple" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="190dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <com.github.pavlospt.CircleView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/CircleView9"
+                        android:layout_width="100dp"
+                        android:layout_height="75dp"
+                        app:cv_backgroundColorValue="@color/basicWhite"
+                        app:cv_fillColor="@color/colorPrimary"
+                        app:cv_fillRadius="0.9"
+                        app:cv_strokeColorValue="@color/purple"
+                        app:cv_strokeWidthSize="5"
+                        app:cv_subtitleColor="@color/colorPrimary"
+                        app:cv_subtitleSize="9dp"
+                        app:cv_subtitleText="subtitle"
+                        app:cv_titleColor="@color/purple"
+                        app:cv_titleSize="15dp"
+                        app:cv_titleText="" />
+
+                    <TextView
+                        android:id="@+id/TricepLab"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tricep"
+                        android:textAlignment="center"
+                        android:textColor="@color/purple" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/signOut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Sign Out" />
+
+
         </LinearLayout>
+
 
 
 </android.support.constraint.ConstraintLayout>
