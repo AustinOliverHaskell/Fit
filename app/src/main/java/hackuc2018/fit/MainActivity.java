@@ -96,8 +96,15 @@ public class MainActivity extends AppCompatActivity {
                     auth.removeAuthStateListener(authStateListener);
                     startActivity(intent);
 
-                }
-            });
+        TextView tv = (TextView) findViewById(R.id.score);
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AddWorkout.class);
+                startActivity(intent);
+            }
+        });
+
 
             /*ImageView profileimage = findViewById(R.id.profile_image);
             profileimage.setOnClickListener(new View.OnClickListener() {
