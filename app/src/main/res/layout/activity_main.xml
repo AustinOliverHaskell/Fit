@@ -36,8 +36,10 @@
                 android:layout_width="match_parent"
                 android:textAlignment="center"
                 android:textColor="@color/purple"
+                android:id="@+id/score"
                 android:text="Score"
                 android:textSize="24dp"
+                android:clickable="true"
                 />
         </LinearLayout>
 
