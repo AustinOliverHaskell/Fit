@@ -72,7 +72,16 @@ public class MainActivity extends AppCompatActivity {
         }
         else
         {
-            username = auth.getCurrentUser().getEmail();
+            ImageView profileimage = findViewById(R.id.profile_image);
+            profileimage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    auth.signOut();
+                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                    auth.removeAuthStateListener(authStateListener);
+                    startActivity(intent);
+                }
+            });
         }
     }
 
@@ -82,9 +91,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null) {
-                    // The user is singed in
-                } else {
+                if (user != null)
+                {
+
+                }
+                else {
                     // The user is signed out
                     Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                     auth.removeAuthStateListener(authStateListener);
